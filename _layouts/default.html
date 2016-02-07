@@ -2,12 +2,15 @@
 <html>
 
   {% include head.html %}
+  {% comment %}
+  {% include right-menu.html %}
+  {% endcomment %}
 
-  <body>
+  <body class="animsition">
 
     {% include header.html %}
 
-    <div class="page-content">
+    <div class="content">
       <div class="wrapper">
         {{ content }}
       </div>

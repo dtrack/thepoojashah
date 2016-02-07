@@ -2,22 +2,52 @@
 layout: default
 ---
 
-<div class="home">
+<div class="top-baner">
+  <div class="slider-wrap padding">
+    <div class="swiper-container main-slider" data-autoplay="4000" data-touch="1" data-mouse="0"
+      data-slides-per-view="1" data-loop="0" data-speed="1200" data-mode="horizontal" id="slider-2">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="full-height">
+            <div class="clip">
+              <div
+                class="bg bg-bg-chrome act"
+                style="background-image:url({{ site.url }}/assets/home/slider/pooja-by-peter-griffith.png)">
+              </div>
+            </div>
+            <div class="main-title color-light">
+              <h2>Zen</h2>
+              <h5>Pooja Shah by Peter Griffith</h5>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="full-height">
+            <div class="clip">
+              <div class="bg bg-bg-chrome act" style="background-image:url({{ site.url }}/assets/home/slider/pooja-corina.png)">
+              </div>
+            </div>
+            <div class="main-title right">
+              <h2>Clean Design</h2>
+              <h5>This is what we call Cherry</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-prev"></div>
+      <div class="slide-next"></div>
+      <div class="pagination vertical-mode"></div>
+    </div>
+  </div>
+</div>
 
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+<div class="full-width">
+  <div class="container">
+    <div class="row" style="margin-top: 20px; margin-bottom: 50px;">
+      <h4>Hello World !</h4>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+    </div>
+  </div>
 </div>
