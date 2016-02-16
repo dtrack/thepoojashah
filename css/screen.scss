@@ -1,0 +1,26 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+@import "spacing";
+
+.animsition {
+    // Slider
+    .slider-wrap .swiper-slide {
+        .main-title {
+            &.right {
+                text-align: right;
+                left: 0;
+                padding-right: -180px;
+                margin-left: 150px;
+            }
+        }
+    }
+    .slider-wrap .swiper-slide.active {
+        .main-title {
+            padding-right: 30px;
+            margin-left: 0;
+        }
+    }
+}

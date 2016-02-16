@@ -7,32 +7,23 @@ layout: default
     <div class="swiper-container main-slider" data-autoplay="4000" data-touch="1" data-mouse="0"
       data-slides-per-view="1" data-loop="0" data-speed="1200" data-mode="horizontal" id="slider-2">
       <div class="swiper-wrapper">
+        {% for slide in site.data.index.slides %}
         <div class="swiper-slide">
           <div class="full-height">
             <div class="clip">
               <div
                 class="bg bg-bg-chrome act"
-                style="background-image:url({{ site.url }}/assets/home/slider/pooja-by-peter-griffith.png)">
+                style="background-image:url({{ site.url }}{{ slide.path }})">
               </div>
             </div>
-            <div class="main-title color-light">
-              <h2>Zen</h2>
-              <h5>Pooja Shah by Peter Griffith</h5>
+            <div
+              class="main-title {% if slide.caption_class %}{{ slide.caption_class }}{% endif %}">
+              <h2>{{ slide.title }}</h2>
+              <h5>{{ slide.caption }}</h5>
             </div>
           </div>
         </div>
-        <div class="swiper-slide">
-          <div class="full-height">
-            <div class="clip">
-              <div class="bg bg-bg-chrome act" style="background-image:url({{ site.url }}/assets/home/slider/pooja-corina.png)">
-              </div>
-            </div>
-            <div class="main-title right">
-              <h2>Clean Design</h2>
-              <h5>This is what we call Cherry</h5>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
       </div>
       <div class="slide-prev"></div>
       <div class="slide-next"></div>
@@ -43,7 +34,7 @@ layout: default
 
 <div class="full-width">
   <div class="container">
-    <div class="row" style="margin-top: 20px; margin-bottom: 50px;">
+    <div class="row top30 bottom50">
       <h4>Hello World !</h4>
       <p>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.

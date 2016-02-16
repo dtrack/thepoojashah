@@ -12,7 +12,7 @@
       <div class="navigation">
         <nav class="menu">
           <ul class="table-cell">
-            {% for item in site.menu %}
+            {% for item in site.data.menu %}
                 {% if item.dropmenu %}
                   <li><a href="#">{{ item.name }}<span class="fa fa-angle-down"></span></a>
                   <ul class="dropmenu">

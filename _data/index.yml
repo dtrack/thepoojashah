@@ -1,0 +1,21 @@
+
+slides:
+  - path: /assets/home/slider/pooja-profile.jpg
+    title: Zen
+    caption: Pooja Shah by Peter Griffith
+    caption_class: color-light
+  - path: /assets/home/slider/pooja-hair-beauty.jpg
+    title: Refreshing
+    caption: Beauty shot by Jane Doe
+  - path: /assets/home/slider/pooja-camera.jpg
+    title: Chill
+    caption: Photo by Jane Doe
+    caption_class: right
+  - path: /assets/home/slider/pooja-beauty-shot.jpg
+    title: Joyful
+    caption: Beauty shot by Jane Doe
+    caption_class: right
+  - path: /assets/home/slider/pooja-lifestyle.jpg
+    title: Lifestyle
+    caption: Photo by Jane Doe
+    caption_class: color-light

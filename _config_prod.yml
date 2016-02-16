@@ -15,25 +15,8 @@ url: "http://thepoojashah.com" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  jekyll
 
-menu:
-  - name: Home
-    link: /
-  - name: About
-    link: /about
-  - name: Portfolio
-    # link: /portfolio
-    dropmenu:
-      - name: Photos
-        submenu:
-          - name: Headshots
-            link: /portfolio/heatshots
-          - name: Commercials
-            link: /portfolio/commercials
-
-      - name: Videos
-        link: /portfolio/videos
-  - name: Contact
-    link: /contact
-
 # Build settings
 markdown: kramdown
+
+sass:
+  style: compressed

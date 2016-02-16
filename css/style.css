@@ -224,10 +224,10 @@ nav > ul > li:last-child .dropmenu li {text-align: right;}
 footer {position: relative; text-align: center; display: block; width: 100%; background: #000; color: #fff;}
 .footer {position: relative; width: 100%; min-height: 100px;}
 .footer-link {position: relative; float: left; height: inherit;}
-.footer-link a {position: relative; float: left; font-size: 16px; line-height: 24px; margin: 0px 15px; color: #999;}
+.footer-link a {font-size: 16px; line-height: 24px; margin: 0px 15px; color: #999;}
 .footer-link a:hover {color: #fff;}
 .footer-folow {position: relative; float: right;}
-.footer-folow a {position: relative; float: left; font-size: 23px; margin: 0px 5px; vertical-align: bottom; font-weight: 100;}
+.footer-folow a {position: relative; font-size: 23px; margin: 0px 5px; vertical-align: bottom; font-weight: 100;}
 .footer-folow a:hover {color: #999;}
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/

@@ -1,4 +1,6 @@
 for index
 - resize images and optimize size
 - contact form
-- ability to put slider caption on either side
+- put all css in a single css
+- minimize / uglify stylesheets
+- remove unused css
