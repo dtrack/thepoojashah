@@ -27,31 +27,6 @@
 /* 01 - LAYOUT INITIALIZATION & COLOR PRESETS */
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
-@font-face {
-    font-family: 'intro_regular';
-    src: url('/css/font/intro-webfont.eot');
-    src: url('/css/font/intro-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/css/font/intro-webfont.woff2') format('woff2'),
-         url('/css/font/intro-webfont.woff') format('woff'),
-         url('/css/font/intro-webfont.ttf') format('truetype'),
-         url('/css/font/intro-webfont.svg#intro_regular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-@font-face {
-    font-family: 'proxima_nova_rgregular';
-    src: url('/css/font/proximanova-regular-webfont.eot');
-    src: url('/css/font/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/css/font/proximanova-regular-webfont.woff2') format('woff2'),
-         url('/css/font/proximanova-regular-webfont.woff') format('woff'),
-         url('/css/font/proximanova-regular-webfont.ttf') format('truetype'),
-         url('/css/font/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
 html {margin:0px; padding:0px; height:100%; width: 100%;}
 body {margin:0px; padding:0px; font-size:100%; height:100%; width:100%; font-family: 'proxima_nova_rgregular'; color:#222; background-color: #fff; font-weight: 300; font-style: normal;}
 a {text-decoration:none; color: inherit; outline:none; transition: all 0.3s ease-in; -moz-transition: all 0.3s ease-in;-o-transition: all 0.3s ease-in;-webkit-transition: all 0.3s ease-in;-ms-transition: all 0.3s ease-in;}
