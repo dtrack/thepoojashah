@@ -31,7 +31,7 @@ layout: default
                 {% for slide in site.data.about.small_slides %}
                 <div class="swiper-slide">
                   <div class="team-block">
-                    <img src="{{ slide.path }}" alt="{{ slide.alt }}" class="img-responsive">
+                    <img src="{{ site.github.url }}{{ slide.path }}" alt="{{ slide.alt }}" class="img-responsive">
                   </div>
                 </div>
                 {% endfor %}
@@ -43,7 +43,7 @@ layout: default
       </div>
       <div class="row top20">
         <div class="col-md-4">
-          <img src="{{ site.data.about.left_image.path }}"
+          <img src="{{ site.github.url }}{{ site.data.about.left_image.path }}"
                alt="{{ site.data.about.left_image.alt }}"
                class="img-responsive">
         </div>

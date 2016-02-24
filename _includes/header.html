@@ -21,18 +21,18 @@
                         <li><a href="#" class="submenu">{{ dropitem.name }}<span class="fa fa-angle-down"></span></a>
                           <ul>
                             {% for subitem in dropitem.submenu %}
-                              <li><a href="{{ subitem.link}}" class="animsition-link">{{ subitem.name }}</a></li>
+                              <li><a href="{{ site.github.url }}{{ subitem.link}}" class="animsition-link">{{ subitem.name }}</a></li>
                             {% endfor %}
                           </ul>
                         </li>
                       {% else %}
-                        <li><a href="{{ dropitem.link}}" class="animsition-link">{{ dropitem.name }}</a></li>
+                        <li><a href="{{ site.github.url }}{{ dropitem.link}}" class="animsition-link">{{ dropitem.name }}</a></li>
                       {% endif %}
                     {% endfor %}
                   </ul>
 
                 {% else %}
-                  <li><a href="{{ item.link }}">{{ item.name }}</a></li>
+                  <li><a href="{{ site.github.url }}{{ item.link }}">{{ item.name }}</a></li>
                 {% endif %}
               </li>
             {% endfor %}
