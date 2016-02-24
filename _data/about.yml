@@ -1,0 +1,14 @@
+small_slides:
+  - path: /assets/about/pooja-shah-leather-jacket.jpg
+    alt: Pooja Shah in leather jacket
+  - path: /assets/about/pooja-shah-beanie.jpg
+    alt: Pooja Shah in leather jacket
+  - path: /assets/about/pooja-shah-student-look.jpg
+    alt: Pooja Shah in leather jacket
+  - path: /assets/about/pooja-shah-black.jpg
+    alt: Pooja Shah Lifestyle
+  - path: /assets/about/pooja-shah-fitness-tank-top.jpg
+    alt: Pooja Shah Fitness
+left_image:
+  path: /assets/about/pooja-shah-inspiring.jpg
+  alt: Inspiring picture of Pooja Shah

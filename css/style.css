@@ -320,7 +320,7 @@ body.act .layer-dark {visibility: visible; opacity: 1;}
 .subtitle h3 {padding-bottom: 10px; font-size: 32px;}
 .subtitle h4 {padding-bottom: 15px;}
 .subtitle p {padding-bottom: 20px;}
-.top-baner.half-height {height: 200px; margin-top: 50px;}
+.top-baner.half-height {height: 150px; margin-top: 50px;}
 .top-baner.height-300 {height: 300px;}
 .top-baner.height-500 {height: 450px; margin-top: 50px;}
 .bg-green {background: #e7efef;}

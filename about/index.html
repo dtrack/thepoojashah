@@ -1,0 +1,70 @@
+---
+layout: default
+---
+
+<div class="top-baner half-height bg-green">
+  <div class="main-title no-bg">
+    <h2>ABOUT POOJA</h2>
+    <p>"You never know how and what you can impact."</p>
+  </div>
+</div>
+
+<div class="main-wrapp start-line time-line">
+  <div class="container">
+    <div class="padd-80">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="about-item">
+            <!-- <h4>ABOUT POOJA</h4> -->
+              <p class="tt">
+                Pooja Shah is a Los Angeles based actress and model of East Indian descent. She is a member of SAG / AFTRA [Screen Actors Guild / American Federation of Television and Radio Artists].
+              </p>
+              <p>
+                Pooja was delighted to start her acting debut on stage in high school where she played lead roles such as Grinning Fox, a Native American princess, on How the West was Fun. This was where she developed a strong desire to continue exploring her creative side through acting; however, she always had a foundational passion on one day helping others.
+              </p>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="row">
+            <div class="swiper-container team-slider" data-autoplay="3000" data-touch="1" data-mouse="0" data-slides-per-view="responsive" data-loop="1" data-speed="1000" data-mode="horizontal" data-xs-slides="1" data-sm-slides="3" data-md-slides="3" data-lg-slides="3">
+              <div class="swiper-wrapper">
+                {% for slide in site.data.about.small_slides %}
+                <div class="swiper-slide">
+                  <div class="team-block">
+                    <img src="{{ slide.path }}" alt="{{ slide.alt }}" class="img-responsive">
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+              <div class="pagination point-style-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row top20">
+        <div class="col-md-4">
+          <img src="{{ site.data.about.left_image.path }}"
+               alt="{{ site.data.about.left_image.alt }}"
+               class="img-responsive">
+        </div>
+        <div class="col-md-8">
+          <p>
+            Thus, in between her transition from theater to film, she received her Bachelor’s Degree in Human Services, Mental Health and a Master’s Degree in Counseling, Marriage Family Therapy. On her break from acting, she was able to help others by providing therapeutic services to those in need. She believes this was vital to her overall knowledge and maturation in life and her development of compassion and empathy towards each character/role in a screen or playwright.
+          </p>
+
+          <p>
+            After much thought and consideration, in 2013, Pooja decided to moved to Los Angeles, California to pursue a career in acting. She quickly found success in the advertising/commercial industry appearing on national commercials and print ads. She has also appeared in short films and webseries such as Homebound, A Whole New Irving, The Story of Miya, and My So Called Co-Star Life.
+          </p>
+
+          <p>
+            In order to eliminate stagnation, Pooja believes in the philosophy of being a lifelong learner. She has attended the Actor's Circle taught by Marcie Smolin, where she grew her practice of scene study and cold reading techniques. She has improved her improvisational [improv] skills through studying at the Upright Citizens Brigade [UCB] Los Angeles. Pooja also gives credit to other acting teachers and coaches, Beth Hogan (producer at the Odyssey Theater) and Lee Grober (on-camera, film focused, dramatic, character development), on their teachings of honing in on the art and craft of acting.
+          </p>
+
+          <p>
+            The drive and motivation for continuous growth on her talent in acting along with her ethnically ambiguous look is a force to be reckoned with on the rise of diversity now being captured on televisions and films across the world.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
