@@ -1,0 +1,74 @@
+---
+layout: default
+
+team:
+  - title: Manager
+    name: Andy Rooney
+    phone: (310) 285-0965
+    email: andy@midwesttalent.com
+  - title: Commercial Agent
+    name: Daniel Hoff Agency
+    phone: (323) 932 2500
+    email: annaleigh@danielhoffagency.com
+---
+
+<div class="top-baner half-height bg-green">
+  <div class="main-title no-bg">
+    <h2>CONTACT</h2>
+  </div>
+</div>
+
+<div class="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="about-item">
+          <h5>Questions and Inquiries</h5>
+          <div class="contact-form">
+            <form action="#" method="post" name="contactform">
+              <input type="text" placeholder="Name*" name="name" required>
+              <input type="email" placeholder="Email*" name="email" required>
+              <input type="text" placeholder="Subject" name="subject">
+              <textarea placeholder="Message"  name="message" required></textarea>
+              <input type="submit" value="send message" name="submit">
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h5>Add Pooja on Social Media</h5>
+        <p>
+          <a href="https://www.facebook.com/{{ site.data.social.facebook }}/" target="_blank">
+            <i class="fa fa-facebook"> </i>
+            {{ site.data.social.facebook }}
+          </a><br>
+          <a href="https://www.instagram.com/{{ site.data.social.instagram }}/" target="_blank">
+            <i class="fa fa-instagram"></i>
+            {{ site.data.social.instagram }}
+          </a><br>
+          <a href="https://twitter.com//{{ site.data.social.twitter }}" target="_blank">
+            <i class="fa fa-twitter"></i>
+            {{ site.data.social.twitter }}
+          </a><br>
+        </p>
+        </p>
+        {% for member in page.team %}
+          <h5>Pooja's {{ member.title }}</h5>
+          <p>
+            {{ member.name }} <br>
+            {% if member.phone %}
+              <span class="fa fa-phone"></span>
+              {{ member.phone }} <br>
+            {% endif %}
+            {% if member.email %}
+              <span class="fa fa-envelope"></span>
+              <a href="mailto:{{ member.email }}" target="_top">
+                {{ member.email }}
+              </a>
+            {% endif %}
+          </p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

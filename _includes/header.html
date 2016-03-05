@@ -21,18 +21,42 @@
                         <li><a href="#" class="submenu">{{ dropitem.name }}<span class="fa fa-angle-down"></span></a>
                           <ul>
                             {% for subitem in dropitem.submenu %}
-                              <li><a href="{{ site.github.url }}{{ subitem.link}}" class="animsition-link">{{ subitem.name }}</a></li>
+                              <li>
+                                {% if subitem.target == '_blank' %}
+                                  <a href="{{ subitem.link}}" target="_blank">
+                                {% else %}
+                                  <a href="{{ site.github.url }}{{ subitem.link}}" class="animsition-link">
+                                {% endif %}
+                                  {{ subitem.name }}
+                                </a>
+                              </li>
                             {% endfor %}
                           </ul>
                         </li>
                       {% else %}
-                        <li><a href="{{ site.github.url }}{{ dropitem.link}}" class="animsition-link">{{ dropitem.name }}</a></li>
+                        <li>
+                          {% if dropitem.target == '_blank' %}
+                            <a href="{{ dropitem.link}}" target="_blank">
+                          {% else %}
+                            <a href="{{ site.github.url }}{{ dropitem.link}}" class="animsition-link">
+                          {% endif %}
+                            {{ dropitem.name }}
+                          </a>
+                        </li>
                       {% endif %}
                     {% endfor %}
                   </ul>
 
                 {% else %}
-                  <li><a href="{{ site.github.url }}{{ item.link }}">{{ item.name }}</a></li>
+                  <li>
+                    {% if item.target == '_blank' %}
+                      <a href="{{ item.link}}" target="_blank">
+                    {% else %}
+                      <a href="{{ site.github.url }}{{ item.link }}">
+                    {% endif %}
+                      {{ item.name }}
+                    </a>
+                  </li>
                 {% endif %}
               </li>
             {% endfor %}

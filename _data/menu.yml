@@ -16,3 +16,6 @@
       link: /portfolio/videos
 - name: Contact
   link: /contact
+- name: IMDB
+  link: http://www.imdb.com/name/nm7586878/
+  target: _blank
