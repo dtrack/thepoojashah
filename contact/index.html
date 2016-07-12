@@ -9,7 +9,8 @@ team:
   - title: Commercial Agent
     name: Daniel Hoff Agency
     phone: (323) 932 2500
-    email: annaleigh@danielhoffagency.com
+    email: garrett@danielhoffagency.com
+active: Contact
 ---
 
 <div class="top-baner half-height bg-green">
@@ -25,9 +26,9 @@ team:
         <div class="about-item">
           <h5>Questions and Inquiries</h5>
           <div class="contact-form">
-            <form action="#" method="post" name="contactform">
+            <form action="https://script.google.com/macros/s/AKfycbzM9bBNbvyMD0N1PahBjuAqiePInQo2b_PWs3EKHn0grwIYYoE/exec" name="contactform">
               <input type="text" placeholder="Name*" name="name" required>
-              <input type="email" placeholder="Email*" name="email" required>
+              <input type="email" placeholder="Email*" name="message" required>
               <input type="text" placeholder="Subject" name="subject">
               <textarea placeholder="Message"  name="message" required></textarea>
               <input type="submit" value="send message" name="submit">
@@ -36,7 +37,7 @@ team:
         </div>
       </div>
       <div class="col-md-4">
-        <h5>Add Pooja on Social Media</h5>
+        <h5>|Social Media|</h5>
         <p>
           <a href="https://www.facebook.com/{{ site.data.social.facebook }}/" target="_blank">
             <i class="fa fa-facebook"> </i>
@@ -53,7 +54,7 @@ team:
         </p>
         </p>
         {% for member in page.team %}
-          <h5>Pooja's |{{ member.title }}|</h5>
+          <h5>|{{ member.title }}|</h5>
           <p>
             {{ member.name }} <br>
             {% if member.phone %}

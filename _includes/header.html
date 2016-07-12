@@ -48,7 +48,7 @@
                   </ul>
 
                 {% else %}
-                  <li>
+                  <li {% if page.active == item.name %}class="active"{% endif %}>
                     {% if item.target == '_blank' %}
                       <a href="{{ item.link}}" target="_blank">
                     {% else %}
