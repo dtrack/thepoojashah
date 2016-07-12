@@ -1,10 +1,7 @@
 ---
-# this ensures Jekyll reads the file to be transformed into CSS later
-# only Main files contain this front matter, not partials.
 ---
 
-@import "spacing";
-
+// fonts
 @font-face {
     font-family: 'intro_regular';
     src: url('{{ site.github.url }}/css/font/intro-webfont.eot');
@@ -30,29 +27,7 @@
 
 }
 
-
-.animsition {
-    // Slider
-    .slider-wrap .swiper-slide {
-        .main-title {
-            &.right {
-                text-align: right;
-                left: 0;
-                padding-right: -180px;
-                margin-left: 150px;
-            }
-        }
-    }
-    .slider-wrap .swiper-slide.active {
-        .main-title {
-            padding-right: 30px;
-            margin-left: 0;
-        }
-    }
-    p, h4 {
-        margin-bottom: 20px;
-    }
-    .main-content p {
-        font-size: 16px;
-    }
-}
+@import "bootstrap";
+@import "animsition";
+@import "style";
+@import "customized";

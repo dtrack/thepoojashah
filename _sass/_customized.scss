@@ -1,0 +1,27 @@
+@import "spacing";
+
+.animsition {
+    // Slider
+    .slider-wrap .swiper-slide {
+        .main-title {
+            &.right {
+                text-align: right;
+                left: 0;
+                padding-right: -180px;
+                margin-left: 150px;
+            }
+        }
+    }
+    .slider-wrap .swiper-slide.active {
+        .main-title {
+            padding-right: 30px;
+            margin-left: 0;
+        }
+    }
+    p, h4 {
+        margin-bottom: 20px;
+    }
+    .main-content p {
+        font-size: 16px;
+    }
+}
