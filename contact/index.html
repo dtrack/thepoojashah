@@ -3,13 +3,20 @@ layout: default
 
 team:
   - title: Manager
+    agency: Midwest Talent
     name: Andy Rooney
-    phone: (310) 285-0965
+    phone: 310.285.0965
     email: andy@midwesttalent.com
+  - title: Theatrical Agent
+    agency: Aqua Talent
+    name: Courtney Peldon
+    phone: 310.859.8889
+    email: cpeldon@aquatalent.com
   - title: Commercial Agent
-    name: Daniel Hoff Agency
-    phone: (323) 932 2500
-    email: garrett@danielhoffagency.com
+    agency: Daniel Hoff Agency
+    name: Peter Kallinteris
+    phone: 323.932.2500
+    email: peter@danielhoffagency.com
 active: Contact
 ---
 
@@ -37,7 +44,7 @@ active: Contact
         </div>
       </div>
       <div class="col-md-4">
-        <h5>|Social Media|</h5>
+        <h5>Social Media</h5>
         <p>
           <a href="https://www.facebook.com/{{ site.data.social.facebook }}/" target="_blank">
             <i class="fa fa-facebook"> </i>
@@ -54,9 +61,9 @@ active: Contact
         </p>
         </p>
         {% for member in page.team %}
-          <h5>|{{ member.title }}|</h5>
+          <h5>{{ member.title }}</h5>
           <p>
-            {{ member.name }} <br>
+            {{ member.name }} - {{ member.agency }}<br>
             {% if member.phone %}
               <span class="fa fa-phone"></span>
               {{ member.phone }} <br>
