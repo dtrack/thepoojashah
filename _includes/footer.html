@@ -13,15 +13,7 @@
           <a href="blog_boxed_full_width.html">Blog</a>
         </div>
         <div class="col-md-3 footer-folow text-right">
-          <a href="https://www.facebook.com/{{ site.data.social.facebook }}/" target="_blank">
-            <span class="fa fa-facebook"></span>
-          </a>
-          <a href="https://www.instagram.com/{{ site.data.social.instagram }}/" target="_blank">
-            <span class="fa fa-instagram"></span>
-          </a>
-          <a href="https://twitter.com/{{ site.data.social.twitter }}" target="_blank">
-            <span class="fa fa-twitter"></span>
-          </a>
+          {% include social-links.html %}
           <a href="{{ site.github.url }}/contact"><span class="fa fa-envelope"></span></a>
         </div>
       </div>

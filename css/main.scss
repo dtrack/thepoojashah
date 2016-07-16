@@ -1,6 +1,8 @@
 ---
 ---
 
+// Rules that need to be parsed by Jekyll
+
 // fonts
 @font-face {
     font-family: 'intro_regular';
@@ -25,6 +27,36 @@
     font-weight: normal;
     font-style: normal;
 
+}
+
+// Footer logo
+.imdb-logo {
+  background-image: url('{{ site.github.url }}/assets/third_party/imdb_logo_fff.png');
+  display: inline-block;
+  height: 23px;
+  position: relative;
+  top: 3px;
+  background-size: 100%;
+  width: 23px;
+}
+
+// Cross site
+.header .menu li.social {
+  top: -.3em;
+  i {
+    display: inline-block;
+    font-size: 1.4em;
+  }
+  .imdb-logo {
+    background-image: url('{{ site.github.url }}/assets/third_party/imdb_logo_777.png');
+    height: 1.4em;
+    left: 5px;
+    top: .15em;
+    width: 1.4em;
+    &:hover {
+      background-image: url('{{ site.github.url }}/assets/third_party/imdb_logo_000.png');
+    }
+  }
 }
 
 @import "bootstrap";

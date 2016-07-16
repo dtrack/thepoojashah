@@ -3,19 +3,8 @@
 - name: About
   link: /about
 - name: Portfolio
-  # link: /portfolio
-  dropmenu:
-    - name: Photos
-      submenu:
-        - name: Headshots
-          link: /portfolio/heatshots
-        - name: Commercials
-          link: /portfolio/commercials
-
-    - name: Videos
-      link: /portfolio/videos
+  link: /portfolio
+- name: Clips
+  link: /clips
 - name: Contact
   link: /contact
-- name: IMDB
-  link: http://www.imdb.com/name/nm7586878/
-  target: _blank
