@@ -1,25 +1,226 @@
 
 slides:
-  - path: /assets/home/slider/pooja-profile.jpg
-    title: Zen
+  - title: Zen
     caption: Pooja Shah by Peter Griffith
     caption_class: color-light
-  - path: /assets/home/slider/pooja-beauty-shot.jpg
-    title: Joyful
+    default_path: /assets/home/slider/pooja-profile-1600.jpg
+    path_infos:
+      - max_width: 1600px
+        orientation: landscape
+        height: 700px
+        path_1x: /assets/home/slider/pooja-profile-1600.jpg
+        path_2x: /assets/home/slider/pooja-profile-fullsize.jpg
+      - max_width: 1280px
+        orientation: landscape
+        height: 525px
+        path_1x: /assets/home/slider/pooja-profile-1280.jpg
+        path_2x: /assets/home/slider/pooja-profile-fullsize.jpg
+      - max_width: 992px
+        orientation: landscape
+        height: 434px
+        path_1x: /assets/home/slider/pooja-profile-992.jpg
+        path_2x: /assets/home/slider/pooja-profile-fullsize.jpg
+      - max_width: 992px
+        orientation: portrait
+        height: 992px
+        path_1x: /assets/home/slider/pooja-profile-portrait-fullsize.jpg
+        path_2x: /assets/home/slider/pooja-profile-portrait-fullsize.jpg
+      - max_width: 768px
+        orientation: landscape
+        height: 336px
+        path_1x: /assets/home/slider/pooja-profile-800.jpg
+        path_2x: /assets/home/slider/pooja-profile-1600.jpg
+      - max_width: 480px
+        height: 217px
+        orientation: landscape
+        path_1x: /assets/home/slider/pooja-profile-496.jpg
+        path_2x: /assets/home/slider/pooja-profile-992.jpg
+      - max_width: 480px
+        height: 550px
+        orientation: portrait
+        path_1x: /assets/home/slider/pooja-profile-portrait-992.jpg
+        path_2x: /assets/home/slider/pooja-profile-portrait-fullsize.jpg
+  - title: Joyful
     caption: Beauty shot by Jane Doe
     caption_class: right
-  - path: /assets/home/slider/pooja-hair-beauty.jpg
-    title: Refreshing
+    default_path: /assets/home/slider/pooja-beauty-shot-1600.jpg
+    path_infos:
+      - max_width: 1600px
+        orientation: landscape
+        height: 700px
+        path_1x: /assets/home/slider/pooja-beauty-shot-1600.jpg
+        path_2x: /assets/home/slider/pooja-beauty-shot-3200.jpg
+      - max_width: 1280px
+        orientation: landscape
+        height: 525px
+        path_1x: /assets/home/slider/pooja-beauty-shot-1280.jpg
+        path_2x: /assets/home/slider/pooja-beauty-shot-2560.jpg
+      - max_width: 992px
+        orientation: landscape
+        height: 434px
+        path_1x: /assets/home/slider/pooja-beauty-shot-992.jpg
+        path_2x: /assets/home/slider/pooja-beauty-shot-1984.jpg
+      - max_width: 992px
+        orientation: portrait
+        height: 992px
+        path_1x: /assets/home/slider/pooja-beauty-shot-portrait-992.jpg
+        path_2x: /assets/home/slider/pooja-beauty-shot-portrait-1984.jpg
+      - max_width: 768px
+        orientation: landscape
+        height: 336px
+        path_1x: /assets/home/slider/pooja-beauty-shot-800.jpg
+        path_2x: /assets/home/slider/pooja-beauty-shot-1600.jpg
+      - max_width: 480px
+        height: 217px
+        orientation: landscape
+        path_1x: /assets/home/slider/pooja-beauty-shot-496.jpg
+        path_2x: /assets/home/slider/pooja-beauty-shot-992.jpg
+      - max_width: 480px
+        height: 550px
+        orientation: portrait
+        path_1x: /assets/home/slider/pooja-beauty-shot-portrait-992.jpg
+        path_2x: /assets/home/slider/pooja-beauty-shot-portrait-1984.jpg
+  - title: Refreshing
     caption: Beauty shot by Jane Doe
-  - path: /assets/home/slider/pooja-camera.jpg
-    title: Chill
+    default_path: /assets/home/slider/pooja-hair-beauty-1600.jpg
+    path_infos:
+      - max_width: 1600px
+        orientation: landscape
+        height: 700px
+        path_1x: /assets/home/slider/pooja-hair-beauty-1600.jpg
+        path_2x: /assets/home/slider/pooja-hair-beauty-3200.jpg
+      - max_width: 1280px
+        orientation: landscape
+        height: 525px
+        path_1x: /assets/home/slider/pooja-hair-beauty-1280.jpg
+        path_2x: /assets/home/slider/pooja-hair-beauty-2560.jpg
+      - max_width: 992px
+        orientation: landscape
+        height: 434px
+        path_1x: /assets/home/slider/pooja-hair-beauty-992.jpg
+        path_2x: /assets/home/slider/pooja-hair-beauty-1984.jpg
+      - max_width: 992px
+        orientation: portrait
+        height: 992px
+        path_1x: /assets/home/slider/pooja-hair-beauty-portrait-992.jpg
+        path_2x: /assets/home/slider/pooja-hair-beauty-portrait-1984.jpg
+      - max_width: 768px
+        orientation: landscape
+        height: 336px
+        path_1x: /assets/home/slider/pooja-hair-beauty-800.jpg
+        path_2x: /assets/home/slider/pooja-hair-beauty-1600.jpg
+      - max_width: 480px
+        height: 217px
+        orientation: landscape
+        path_1x: /assets/home/slider/pooja-hair-beauty-496.jpg
+        path_2x: /assets/home/slider/pooja-hair-beauty-992.jpg
+      - max_width: 480px
+        height: 550px
+        orientation: portrait
+        path_1x: /assets/home/slider/pooja-hair-beauty-portrait-992.jpg
+        path_2x: /assets/home/slider/pooja-hair-beauty-portrait-1984.jpg
+  - title: Chill
     caption: Photo by Jane Doe
     caption_class: right
-  - path: /assets/home/slider/pooja-lifestyle.jpg
-    title: Lifestyle
+    default_path: /assets/home/slider/pooja-camera-1600.jpg
+    path_infos:
+      - max_width: 1600px
+        orientation: landscape
+        height: 700px
+        path_1x: /assets/home/slider/pooja-camera-1600.jpg
+        path_2x: /assets/home/slider/pooja-camera-3200.jpg
+      - max_width: 1280px
+        orientation: landscape
+        height: 525px
+        path_1x: /assets/home/slider/pooja-camera-1280.jpg
+        path_2x: /assets/home/slider/pooja-camera-2560.jpg
+      - max_width: 992px
+        orientation: landscape
+        height: 434px
+        path_1x: /assets/home/slider/pooja-camera-992.jpg
+        path_2x: /assets/home/slider/pooja-camera-1984.jpg
+      - max_width: 992px
+        orientation: portrait
+        height: 992px
+        path_1x: /assets/home/slider/pooja-camera-portrait-992.jpg
+        path_2x: /assets/home/slider/pooja-camera-portrait-1984.jpg
+      - max_width: 768px
+        orientation: landscape
+        height: 336px
+        path_1x: /assets/home/slider/pooja-camera-800.jpg
+        path_2x: /assets/home/slider/pooja-camera-1600.jpg
+      - max_width: 480px
+        height: 217px
+        orientation: landscape
+        path_1x: /assets/home/slider/pooja-camera-496.jpg
+        path_2x: /assets/home/slider/pooja-camera-992.jpg
+      - max_width: 480px
+        height: 550px
+        orientation: portrait
+        path_1x: /assets/home/slider/pooja-camera-portrait-992.jpg
+        path_2x: /assets/home/slider/pooja-camera-portrait-1984.jpg
+  - title: Lifestyle
     caption: Photo by Jane Doe
     caption_class: color-light
-  - path: /assets/home/slider/pooja-headshots-docked.jpg
-    title: Lifestyle
-    caption: Photo by Jane Doe
-    caption_class: color-light right
+    default_path: /assets/home/slider/pooja-lifestyle-1600.jpg
+    path_infos:
+      - max_width: 1600px
+        orientation: landscape
+        height: 700px
+        path_1x: /assets/home/slider/pooja-lifestyle-1600.jpg
+        path_2x: /assets/home/slider/pooja-lifestyle-3200.jpg
+      - max_width: 1280px
+        orientation: landscape
+        height: 525px
+        path_1x: /assets/home/slider/pooja-lifestyle-1280.jpg
+        path_2x: /assets/home/slider/pooja-lifestyle-2560.jpg
+      - max_width: 992px
+        height: 434px
+        orientation: landscape
+        path_1x: /assets/home/slider/pooja-lifestyle-992.jpg
+        path_2x: /assets/home/slider/pooja-lifestyle-1984.jpg
+      - max_width: 992px
+        orientation: portrait
+        height: 992px
+        path_1x: /assets/home/slider/pooja-lifestyle-portrait-992.jpg
+        path_2x: /assets/home/slider/pooja-lifestyle-portrait-1984.jpg
+      - max_width: 768px
+        height: 336px
+        orientation: landscape
+        path_1x: /assets/home/slider/pooja-lifestyle-800.jpg
+        path_2x: /assets/home/slider/pooja-lifestyle-1600.jpg
+      - max_width: 480px
+        height: 217px
+        orientation: landscape
+        path_1x: /assets/home/slider/pooja-lifestyle-496.jpg
+        path_2x: /assets/home/slider/pooja-lifestyle-992.jpg
+      - max_width: 480px
+        height: 550px
+        orientation: portrait
+        path_1x: /assets/home/slider/pooja-lifestyle-portrait-992.jpg
+        path_2x: /assets/home/slider/pooja-lifestyle-portrait-1984.jpg
+
+
+  # - path: /assets/home/slider/pooja-profile.jpg
+  #   title: Zen
+  #   caption: Pooja Shah by Peter Griffith
+  #   caption_class: color-light
+  # - path: /assets/home/slider/pooja-beauty-shot.jpg
+  #   title: Joyful
+  #   caption: Beauty shot by Jane Doe
+  #   caption_class: right
+  # - path: /assets/home/slider/pooja-hair-beauty.jpg
+  #   title: Refreshing
+  #   caption: Beauty shot by Jane Doe
+  # - path: /assets/home/slider/pooja-camera.jpg
+  #   title: Chill
+  #   caption: Photo by Jane Doe
+  #   caption_class: right
+  # - path: /assets/home/slider/pooja-lifestyle.jpg
+  #   title: Lifestyle
+  #   caption: Photo by Jane Doe
+  #   caption_class: color-light
+  # - path: /assets/home/slider/pooja-headshots-docked.jpg
+  #   title: Lifestyle
+  #   caption: Photo by Jane Doe
+  #   caption_class: color-light right
