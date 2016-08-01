@@ -5,13 +5,19 @@
         <div class="col-md-3 text-left">
           <p>© 2015 - {{ site.time | date: '%Y' }} THEPOOJASHAH.COM</p>
         </div>
-        <div class="col-md-6 footer-link">
-          <a href="index.html">Home</a>
-          <a href="#">Our clients</a>
-          <a href="about3.html">About us</a>
-          <a href="contact2.html">Contact us</a>
-          <a href="blog_boxed_full_width.html">Blog</a>
-        </div>
+        <nav class="col-md-6 footer-link">
+          {% for item in site.data.menu %}
+            {% if item.link %}
+              {% if item.target == '_blank' %}
+                <a href="{{ item.link}}" target="_blank">
+              {% else %}
+                <a href="{{ site.github.url }}{{ item.link }}">
+              {% endif %}
+                {{ item.name }}
+              </a>
+            {% endif %}
+          {% endfor %}
+        </nav>
         <div class="col-md-3 footer-folow text-right">
           {% include social-links.html %}
           <a href="{{ site.github.url }}/contact"><span class="fa fa-envelope"></span></a>
