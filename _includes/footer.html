@@ -2,10 +2,10 @@
   <div class="container">
     <div class="footer">
       <div class="row vertical-align">
-        <div class="col-md-3 text-left">
+        <div class="col-md-3">
           <p>© 2015 - {{ site.time | date: '%Y' }} THEPOOJASHAH.COM</p>
         </div>
-        <nav class="col-md-6 footer-link">
+        <div class="col-md-6 footer-link">
           {% for item in site.data.menu %}
             {% if item.link %}
               {% if item.target == '_blank' %}
@@ -17,7 +17,7 @@
               </a>
             {% endif %}
           {% endfor %}
-        </nav>
+        </div>
         <div class="col-md-3 footer-folow text-right">
           {% include social-links.html %}
           <a href="{{ site.github.url }}/contact"><span class="fa fa-envelope"></span></a>
