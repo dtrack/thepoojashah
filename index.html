@@ -1,24 +1,129 @@
 ---
+layout: default
+
+active: Home
 ---
-<html>
-<head>
-  <style>
-    html {
-      background: url("{{ site.github.url }}/assets/coming_soon/pooja-bg.jpg") no-repeat center center fixed;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-    /* Smartphones (portrait) ----------- */
-    @media only screen  and (max-width : 320px) {
-      /* Styles */
-      html {
-        background: url("{{ site.github.url }}/assets/coming_soon/pooja-bg-portrait.jpg") no-repeat center center fixed;
-      }
-    }
-  </style>
-</head>
-<body>
-</body>
-</html>
+
+<div class="top-baner">
+  <div class="slider-wrap padding">
+    <div class="swiper-container main-slider" data-autoplay="4000" data-touch="1" data-mouse="0"
+      data-slides-per-view="1" data-loop="0" data-speed="1200" data-mode="horizontal" id="slider-2">
+      <div class="swiper-wrapper">
+        {% for slide in site.data.index.slides %}
+        <div class="swiper-slide">
+          <div class="full-height">
+            <div class="clip">
+              <style scoped>
+
+              {% assign slide_idx = forloop.index %}
+              .media-aware-{{ slide_idx }} {
+                background-image: url({{ site.github.url }}{{ slide.default_path }});
+              }
+              {% for path_info in slide.path_infos %}
+              @media only screen and (
+                  max-width: {{ path_info.max_width }})
+                  {% if path_info.orientation %}and (orientation: {{ path_info.orientation }}) {% endif %}
+                ) {
+                /* non-retina */
+                .media-aware-{{ slide_idx }} {
+                  background-image: url({{ site.github.url }}{{ path_info.path_1x }});
+                }
+                .top-baner, .main-slider .swiper-slide .full-height {height: path_info.height;}
+              }
+
+              @media
+              only screen and (
+                -webkit-min-device-pixel-ratio: 2) and
+                (max-width: {{ path_info.max_width }})
+                {% if path_info.orientation %}and (orientation: {{ path_info.orientation }}) {% endif %}
+              ,
+              only screen and (
+                min--moz-device-pixel-ratio: 2) and
+                (max-width: {{ path_info.max_width }})
+                {% if path_info.orientation %}and (orientation: {{ path_info.orientation }}) {% endif %},
+              only screen and (
+                -o-min-device-pixel-ratio: 2/1) and
+                (max-width: {{ path_info.max_width }})
+                {% if path_info.orientation %}and (orientation: {{ path_info.orientation }}) {% endif %},
+              only screen and (
+                min-device-pixel-ratio: 2) and
+                (max-width: {{ path_info.max_width }})
+                {% if path_info.orientation %}and (orientation: {{ path_info.orientation }}) {% endif %},
+              only screen and (
+                min-resolution: 192dpi) and
+                (max-width: {{ path_info.max_width }})
+                {% if path_info.orientation %}and (orientation: {{ path_info.orientation }}) {% endif %},
+              only screen and (
+                  min-resolution: 2dppx) and (max-width: {{ path_info.max_width }})
+                  {% if path_info.orientation %}and (orientation: {{ path_info.orientation }}) {% endif %} {
+                /* retina */
+                .media-aware-{{ slide_idx }} {
+                  background-image: url({{ site.github.url }}{{ path_info.path_2x }});
+                }
+                .top-baner, .main-slider .swiper-slide .full-height {height: {{ path_info.height }};}
+              }
+
+              {% endfor %}
+              </style>
+              <div class="bg bg-bg-chrome act media-aware-{{ slide_idx }}"></div>
+              <!-- <div
+                class="bg bg-bg-chrome act"
+                style="background-image:url({{ site.github.url }}{{ slide.path }})">
+              </div> -->
+            </div>
+            <div
+              class="main-title {% if slide.caption_class %}{{ slide.caption_class }}{% endif %}">
+              <h2>{{ slide.title }}</h2>
+              <h5>{{ slide.caption }}</h5>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="slide-prev"></div>
+      <div class="slide-next"></div>
+      <div class="pagination vertical-mode"></div>
+    </div>
+  </div>
+</div>
+
+<div class="full-width">
+  <div class="container">
+    <div class="row top30 bottom30">
+      <h4 class="col-xs-5 col-md-3 top10 text-right">
+        Hello,
+        <br> I am...
+      </h4>
+      <div class="col-xs-6 col-md-7">
+        <p class="text-justify">
+          <strong>A</strong>rtistic,
+          <strong>B</strong>eautiful,
+          <strong>C</strong>ompassionate,
+          <strong>D</strong>riven,
+          <strong>E</strong>mpathic,
+          <strong>F</strong>unny,
+          <strong>G</strong>rateful,
+          <strong>H</strong>ealthy,
+          <strong>I</strong>maginative,
+          <strong>J</strong>oyful,
+          <strong>K</strong>indhearted,
+          <strong>L</strong>ikable,
+          <strong>M</strong>emorable,
+          <strong>N</strong>atural,
+          <strong>O</strong>riginal,
+          <strong>P</strong>assionate,
+          <strong>Q</strong>ualified,
+          <strong>R</strong>are,
+          <strong>S</strong>trong,
+          <strong>T</strong>hankful,
+          <strong>U</strong>nselfish,
+          <strong>V</strong>ulnerable,
+          <strong>W</strong>itty,
+          <strong>X</strong>enodochial,
+          <strong>Y</strong>outhful,
+          <strong>Z</strong>ealous
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
