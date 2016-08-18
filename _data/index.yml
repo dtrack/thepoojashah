@@ -1,7 +1,7 @@
 
 slides:
-  - title: Zen
-    caption: Pooja Shah by Peter Griffith
+  - title: Natural
+    caption: by Peter Griffith
     caption_class: color-light
     default_path: /assets/home/slider/pooja-profile-1600.jpg
     path_infos:
@@ -41,7 +41,7 @@ slides:
         path_1x: /assets/home/slider/pooja-profile-portrait-992.jpg
         path_2x: /assets/home/slider/pooja-profile-portrait-fullsize.jpg
   - title: Joyful
-    caption: Beauty shot by Jane Doe
+    caption: by Corina Marie
     caption_class: right
     default_path: /assets/home/slider/pooja-beauty-shot-1600.jpg
     path_infos:
@@ -80,8 +80,8 @@ slides:
         orientation: portrait
         path_1x: /assets/home/slider/pooja-beauty-shot-portrait-992.jpg
         path_2x: /assets/home/slider/pooja-beauty-shot-portrait-1984.jpg
-  - title: Refreshing
-    caption: Beauty shot by Jane Doe
+  - title: Passionate
+    caption: by Corina Marie
     default_path: /assets/home/slider/pooja-hair-beauty-1600.jpg
     path_infos:
       - max_width: 1600px
@@ -119,8 +119,8 @@ slides:
         orientation: portrait
         path_1x: /assets/home/slider/pooja-hair-beauty-portrait-992.jpg
         path_2x: /assets/home/slider/pooja-hair-beauty-portrait-1984.jpg
-  - title: Chill
-    caption: Photo by Jane Doe
+  - title: Memorable
+    caption: by Corina Marie
     caption_class: right
     default_path: /assets/home/slider/pooja-camera-1600.jpg
     path_infos:
@@ -159,8 +159,8 @@ slides:
         orientation: portrait
         path_1x: /assets/home/slider/pooja-camera-portrait-992.jpg
         path_2x: /assets/home/slider/pooja-camera-portrait-1984.jpg
-  - title: Lifestyle
-    caption: Photo by Jane Doe
+  - title: Healthy
+    caption: by Corina Marie
     caption_class: color-light
     default_path: /assets/home/slider/pooja-lifestyle-1600.jpg
     path_infos:
