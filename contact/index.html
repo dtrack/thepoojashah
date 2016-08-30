@@ -1,22 +1,6 @@
 ---
 layout: default
 
-team:
-  - title: Manager
-    agency: Midwest Talent
-    name: Andy Rooney
-    phone: 310.285.0965
-    email: andy@midwesttalent.com
-  - title: Theatrical Agent
-    agency: Aqua Talent
-    name: Courtney Peldon
-    phone: 310.859.8889
-    email: cpeldon@aquatalent.com
-  - title: Commercial Agent
-    agency: Daniel Hoff Agency
-    name: Peter Kallinteris
-    phone: 323.932.2500
-    email: peter@danielhoffagency.com
 active: Contact
 ---
 
@@ -33,12 +17,12 @@ active: Contact
         <div class="about-item">
           <h5>Questions and Inquiries</h5>
           <div class="contact-form">
-            <form action="https://script.google.com/macros/s/AKfycbzM9bBNbvyMD0N1PahBjuAqiePInQo2b_PWs3EKHn0grwIYYoE/exec" name="contactform">
+            <form name="contact-form" onsubmit="return false">
               <input type="text" placeholder="Name*" name="name" required>
-              <input type="email" placeholder="Email*" name="message" required>
+              <input type="email" placeholder="Email*" name="email" required>
               <input type="text" placeholder="Subject" name="subject">
               <textarea placeholder="Message"  name="message" required></textarea>
-              <input type="submit" value="send message" name="submit">
+              <input type="submit" value="Send Message" name="submit">
             </form>
           </div>
         </div>
@@ -60,7 +44,7 @@ active: Contact
           </a><br>
         </p>
         </p>
-        {% for member in page.team %}
+        {% for member in site.data.contact.team %}
           <h5>{{ member.title }}</h5>
           <p>
             {{ member.name }} - {{ member.agency }}<br>
@@ -69,8 +53,8 @@ active: Contact
               {{ member.phone }} <br>
             {% endif %}
             {% if member.email %}
-              <span class="fa fa-envelope"></span>
               <a href="mailto:{{ member.email }}" target="_top">
+                <span class="fa fa-envelope"></span>
                 {{ member.email }}
               </a>
             {% endif %}

@@ -33,4 +33,16 @@
         font-size: 1.5em;
       }
     }
+
+    // Contact form
+    .contact {
+      .about-item {
+        a {
+          font-weight: bold;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+    }
 }
