@@ -3,8 +3,7 @@
 - name: About
   link: /about
 - name: Portfolio
-  # link: /portfolio
-  link: /coming-soon.html
+  link: /portfolio
 - name: Clips
   link: /coming-soon.html
   # link: /clips

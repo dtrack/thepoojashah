@@ -1,0 +1,49 @@
+<div class="main-wrapp">
+  <div class="container">
+    <div class="row">
+      <div id="filters" class="fillter-wrap filters-style-1">
+        {% for item in page.filters %}
+          <button
+            class="but{% if item.active %} activbut{% endif %}"
+            {% if item.filter == "*" %}
+              data-filter="*"
+            {% else %}
+              data-filter=".{{ item.filter }}"
+            {% endif %}>
+            {{ item.name }}
+          </button>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="padd-80">
+      <div class="row">
+        <div class="izotope-container popup-gallery {{ page.portfolioStyle }}">
+          <div class="grid-sizer"></div>
+          {% for item in page.portfolioItems %}
+            <div class="item fadeInUpBig {{ item.filters }}">
+              <div class="item-desc">
+                <div class="vertical-align">
+                  {% if item.title %}<h4>{{ item.title }}</h4>{% endif %}
+                  {% if item.subtitle %}<h5>{{ item.subtitle }}</h5>{% endif %}
+                  {% if item.description %}<p>{{ item.description }}</p>{% endif %}
+                  <a href="{{ site.cloudinaryBaseUrl }}/{{ page.scaleParamFullSize }}/{{ page.cloudinaryFolder }}/{{ item.imageId }}" class="view-item link" data-effect="zoomIn"><i class="fa fa-eye"></i></a>
+                </div>
+              </div>
+              <picture>
+                {% for scale in page.scaleParamsPerDeviceSize %}
+                <source
+                  media="(min-width: {{ scale.minWidth }})"
+                  srcset="{{ site.cloudinaryBaseUrl }}/{{ scale.scaleParam2x }}/{{ page.cloudinaryFolder }}/{{ item.imageId }} 2x,
+                   {{ site.cloudinaryBaseUrl }}/{{ scale.scaleParam1x }}/{{ page.cloudinaryFolder }}/{{ item.imageId }} 1x">
+                {% endfor %}
+                <img
+                  src="{{ site.cloudinaryBaseUrl }}/{{ page.defaultScaleParam1x }}/{{ page.cloudinaryFolder }}/{{ item.imageId }}"
+                  alt="{{ item.title }}">
+              </picture>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
