@@ -8,7 +8,7 @@
             {% if item.filter == "*" %}
               data-filter="*"
             {% else %}
-              data-filter=".{{ item.filter }}"
+              data-filter="{{ item.filter }}"
             {% endif %}>
             {{ item.name }}
           </button>
