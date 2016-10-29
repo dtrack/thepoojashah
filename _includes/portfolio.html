@@ -20,13 +20,14 @@
         <div class="izotope-container popup-gallery {{ page.portfolioStyle }}">
           <div class="grid-sizer"></div>
           {% for item in page.portfolioItems %}
+          <a href="{{ site.cloudinaryBaseUrl }}/{{ page.scaleParamFullSize }}/{{ page.cloudinaryFolder }}/{{ item.imageId }}" class="view-item" data-effect="zoomIn">
             <div class="item fadeInUpBig {{ item.filters }}">
               <div class="item-desc">
                 <div class="vertical-align">
                   {% if item.title %}<h4>{{ item.title }}</h4>{% endif %}
                   {% if item.subtitle %}<h5>{{ item.subtitle }}</h5>{% endif %}
                   {% if item.description %}<p>{{ item.description }}</p>{% endif %}
-                  <a href="{{ site.cloudinaryBaseUrl }}/{{ page.scaleParamFullSize }}/{{ page.cloudinaryFolder }}/{{ item.imageId }}" class="view-item link" data-effect="zoomIn"><i class="fa fa-eye"></i></a>
+                  <div class="link"><i class="fa fa-eye"></i></div>
                 </div>
               </div>
               <picture>
@@ -41,6 +42,7 @@
                   alt="{{ item.title }}">
               </picture>
             </div>
+          </a>
           {% endfor %}
         </div>
       </div>
