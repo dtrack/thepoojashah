@@ -470,25 +470,29 @@
 	/*POPUP*/
 	/**********************************/
 
-	if ($('.popup-gallery').length) {
-		$('.popup-gallery').magnificPopup({
-			delegate: '.view-item',
-			type: 'image',
-			removalDelay: 100,
-			tLoading: 'Loading image #%curr%...',
-			mainClass: 'mfp-fade',
-			closeBtnInside: false,
-			gallery: {
-				enabled: true,
-			},
-			callbacks: {
-              	beforeOpen: function() {
-                	this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure animated ' + this.st.el.attr('data-effect'));
-            	}
-            }
-
-		});
-	}
+  if ($('.popup-gallery').length) {
+    $('.popup-gallery').magnificPopup({
+      delegate: '.view-item',
+      type: 'image',
+      removalDelay: 100,
+      tLoading: 'Loading image #%curr%...',
+      mainClass: 'mfp-fade',
+      closeBtnInside: false,
+      gallery: {
+        enabled: true,
+      },
+      callbacks: {
+        beforeOpen: function() {
+        	this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure animated ' + this.st.el.attr('data-effect'));
+        },
+        change: function () {
+          if (!this.currItem.el.children('.item').is(':visible')) {
+            this.next();
+          }
+        }
+      }
+    });
+  }
 
 
 	/***********************************/
