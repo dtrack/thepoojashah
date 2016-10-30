@@ -487,7 +487,6 @@
         	this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure animated ' + this.st.el.attr('data-effect'));
         },
         change: function () {
-          console.log(this.direction)
           if (!this.currItem.el.children('.item').is(':visible')) {
             this.direction ? this.next(): this.prev();
           }
