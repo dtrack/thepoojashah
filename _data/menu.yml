@@ -5,7 +5,6 @@
 - name: Portfolio
   link: /portfolio
 - name: Clips
-  link: /coming-soon.html
-  # link: /clips
+  link: /clips
 - name: Contact
   link: /contact
