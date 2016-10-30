@@ -471,9 +471,10 @@
 	/**********************************/
 
   if ($('.popup-gallery').length) {
+    var galleryType = $('.popup-gallery').data('galleryType') || 'image';
     $('.popup-gallery').magnificPopup({
       delegate: '.view-item',
-      type: 'image',
+      type: galleryType,
       removalDelay: 100,
       tLoading: 'Loading image #%curr%...',
       mainClass: 'mfp-fade',
@@ -486,8 +487,9 @@
         	this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure animated ' + this.st.el.attr('data-effect'));
         },
         change: function () {
+          console.log(this.direction)
           if (!this.currItem.el.children('.item').is(':visible')) {
-            this.next();
+            this.direction ? this.next(): this.prev();
           }
         }
       }

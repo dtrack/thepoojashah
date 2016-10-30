@@ -821,7 +821,7 @@ accordion > dt > a:after {content: "\f107";width: 15px;height: 15px;margin-top: 
 
 .item-desc:hover h4, .item-desc:hover h5 {transform: translateY(0); -webkit-transform: translateY(0);-moz-transform: translateY(0);-ms-transform: translateY(0); opacity: 1;}
 .item-desc:hover .link {opacity: 1; transform: translateX(0); -webkit-transform: translateX(0);-moz-transform: translateX(0);-ms-transform: translateX(0);}
-.popup-gallery .item .link i {font-size: 15px; line-height: 50px;}
+.popup-gallery .item .link i {line-height: 50px;}
 .popup-gallery .item .link:hover {color: #fff; background: #888;}
 .item-desc.black {background: rgba(0,0,0,0.8);}
 .item-desc.black {color: #fff;}

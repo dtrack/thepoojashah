@@ -1,3 +1,46 @@
+{% comment %}
+portfolio to be included by other pages.
+
+The following values must be defined for this portfolio to render properly:
+
+- to be defined as page variables:
+  - `filters`: List of portfolio filters, each filter is a dict as follow:
+      - `name`: The name of the filter to be displayed
+      - `filter`: A filter condition as defined in the isotop documentation:
+        http://isotope.metafizzy.co/filtering.html
+      - `active`: boolean indicating if the filter is active at page load
+  - 'galleryType': (Defaults to `image`): the type of fullscreen gallery.
+    Can be `inline` (for videos) or `image`
+  - `portfolioStyle`: the class that will define the number of columns
+    and whether to show a gutter between images, the class name can be
+    "gutt-col<n>" or "nogutt-col<n>" where <n> is the number of portfolio
+    columns, and gutt / nogutt indicate whether to show a gutter or not
+  - `cloudinaryFolder`: the folder location of the portfolio pics in
+    cloudinary
+  - `defaultScaleParam1x`: the default scale for portfolio images, for non
+    retina devices. Expressed as a cloudinary url parameters.
+  - `defaultScaleParam2x`: same as above, for retina devilces
+  - `scaleParamFullSize`: the cloudinary url parameters for the scale
+    of the full size pictures when expended
+  - `scaleParamsPerDeviceSize`: list of maps expressing cloudinary url
+    parameters for each device size (start by higher size first since
+    the css engine will evaluate every condition until the first one is met)
+    Every item of that list has 3 keys that need to have values:
+      - `minWidth`: the device's min width for the scales
+      - `scaleParam1x`: The cloudinary url params for non retina devices
+      - `scaleParam2x`: The cloudinary url params for retina devices
+  - `portfolioItems`: list of dicts describing portfolio images to be
+    displayed, each item looks as follow:
+      - `description`: (Optional): The description to be displayed for the image
+      - `filters`: (Optional) List of filters (separated by spaces) that
+        this item belongs to.
+      - `fullscreenHref`: (Optional) href to be used for the fullscreen view.
+        If omitted, will build a cloudinary link from the image id
+      - `imageId`: The cloudinary id for this image (the file name)
+      - `subtitle`: (Optional): The subtitle to be displayed for the image
+      - `title`: (Optional): The title to be displayed for the image
+{% endcomment %}
+
 <div class="main-wrapp">
   <div class="container">
     <div class="row">
@@ -17,32 +60,42 @@
     </div>
     <div class="padd-80">
       <div class="row">
-        <div class="izotope-container popup-gallery {{ page.portfolioStyle }}">
+        <div class="izotope-container popup-gallery {{ page.portfolioStyle }}" data-gallery-type="{{ page.galleryType }}">
           <div class="grid-sizer"></div>
           {% for item in page.portfolioItems %}
-          <a href="{{ site.cloudinaryBaseUrl }}/{{ page.scaleParamFullSize }}/{{ page.cloudinaryFolder }}/{{ item.imageId }}" class="view-item" data-effect="zoomIn">
-            <div class="item fadeInUpBig {{ item.filters }}">
-              <div class="item-desc">
-                <div class="vertical-align">
-                  {% if item.title %}<h4>{{ item.title }}</h4>{% endif %}
-                  {% if item.subtitle %}<h5>{{ item.subtitle }}</h5>{% endif %}
-                  {% if item.description %}<p>{{ item.description }}</p>{% endif %}
-                  <div class="link"><i class="fa fa-eye"></i></div>
+            {% if item.fullscreenHref %}
+            <a href="{{ item.fullscreenHref }}" class="view-item" data-effect="zoomIn">
+            {% else %}
+            <a href="{{ site.cloudinaryBaseUrl }}/{{ page.scaleParamFullSize }}/{{ page.cloudinaryFolder }}/{{ item.imageId }}" class="view-item" data-effect="zoomIn">
+            {% endif %}
+              <div class="item fadeInUpBig {{ item.filters }}">
+                <div class="item-desc">
+                  <div class="vertical-align">
+                    {% if item.title %}<h4>{{ item.title }}</h4>{% endif %}
+                    {% if item.subtitle %}<h5>{{ item.subtitle }}</h5>{% endif %}
+                    {% if item.description %}<p>{{ item.description }}</p>{% endif %}
+                    <div class="link">
+                      {% if page.galleryType == 'image' %}
+                        <i class="fa fa-eye fa-2x" aria-hidden="true"></i>
+                      {% else %}
+                        <i class="fa fa-play-circle fa-4x" aria-hidden="true"></i>
+                      {% endif %}
+                    </div>
+                  </div>
                 </div>
+                <picture>
+                  {% for scale in page.scaleParamsPerDeviceSize %}
+                  <source
+                    media="(min-width: {{ scale.minWidth }})"
+                    srcset="{{ site.cloudinaryBaseUrl }}/{{ scale.scaleParam2x }}/{{ page.cloudinaryFolder }}/{{ item.imageId }} 2x,
+                     {{ site.cloudinaryBaseUrl }}/{{ scale.scaleParam1x }}/{{ page.cloudinaryFolder }}/{{ item.imageId }} 1x">
+                  {% endfor %}
+                  <img
+                    src="{{ site.cloudinaryBaseUrl }}/{{ page.defaultScaleParam1x }}/{{ page.cloudinaryFolder }}/{{ item.imageId }}"
+                    alt="{{ item.title }}">
+                </picture>
               </div>
-              <picture>
-                {% for scale in page.scaleParamsPerDeviceSize %}
-                <source
-                  media="(min-width: {{ scale.minWidth }})"
-                  srcset="{{ site.cloudinaryBaseUrl }}/{{ scale.scaleParam2x }}/{{ page.cloudinaryFolder }}/{{ item.imageId }} 2x,
-                   {{ site.cloudinaryBaseUrl }}/{{ scale.scaleParam1x }}/{{ page.cloudinaryFolder }}/{{ item.imageId }} 1x">
-                {% endfor %}
-                <img
-                  src="{{ site.cloudinaryBaseUrl }}/{{ page.defaultScaleParam1x }}/{{ page.cloudinaryFolder }}/{{ item.imageId }}"
-                  alt="{{ item.title }}">
-              </picture>
-            </div>
-          </a>
+            </a>
           {% endfor %}
         </div>
       </div>
