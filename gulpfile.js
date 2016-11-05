@@ -2,6 +2,7 @@ var concat = require('gulp-concat');
 var git = require('gulp-git');
 var gulp = require('gulp');
 var pump = require('pump');
+var runSequence = require('run-sequence');
 var uglify = require('gulp-uglify');
 
 gulp.task('compress', function (cb) {
@@ -32,12 +33,12 @@ gulp.task('to-github-pages', function (cb) {
       pump([
           git.add('dist'),
           git.commit('Adding dist js path'),
-          git.pull('origin', branch, {args: '--rebase'})
+          git.pull('origin', branch, {args: '--rebase'}),
           git.push('origin', branch),
           git.checkout('gh-pages'),
-          git.pull('origin', 'gh-pages', {args: '--rebase'})
-          git.merge(master, {args: '--no-commit --no-ff'})
-          git.push(origin, 'gh-pages')
+          git.pull('origin', 'gh-pages', {args: '--rebase'}),
+          git.merge(master, {args: '--no-commit --no-ff'}),
+          git.push(origin, 'gh-pages'),
           git.checkout('master')
         ], cb
       );
@@ -49,6 +50,14 @@ gulp.task('to-github-pages', function (cb) {
 gulp.task('release', function (cb) {
   runSequence(
     'compress',
-    'to-github-pages';
+    'to-github-pages',
+    function (error) {
+      if (error) {
+        console.log(error.message);
+      } else {
+        console.log('RELEASE FINISHED SUCCESSFULLY');
+      }
+      callback(error);
+    }
   );
 });
