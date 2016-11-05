@@ -29,11 +29,20 @@
 
 <div class="layer-dark"></div>
 
-<script src="{{ site.github.url }}/js/vendor/jquery-2.1.4.min.js"></script>
-<script src="{{ site.github.url }}/js/vendor/isotope.pkgd.min.js"></script>
-<script src="{{ site.github.url }}/js/vendor/jquery.animsition.min.js"></script>
-<script src="{{ site.github.url }}/js/vendor/jquery.magnific-popup.min.js"></script>
-<script src="{{ site.github.url }}/js/vendor/wow.min.js"></script>
-<script src="{{ site.github.url }}/js/vendor/idangerous.swiper.min.js"></script>
-<script src="{{ site.github.url }}/js/vendor/all.js"></script>
-<script src="{{ site.github.url }}/js/contact.js"></script>
+<script type="text/javascript">
+  var CONTACT_SUBMIT_URL = "{{ site.data.contact.contact_form_submit_url }}";
+  var GH_URL = "{{ site.github.url }}";
+</script>
+
+{% if jekyll.environment == "development" %}
+  <script src="{{ site.github.url }}/js/vendor/jquery-2.1.4.min.js"></script>
+  <script src="{{ site.github.url }}/js/vendor/isotope.pkgd.min.js"></script>
+  <script src="{{ site.github.url }}/js/vendor/jquery.animsition.min.js"></script>
+  <script src="{{ site.github.url }}/js/vendor/jquery.magnific-popup.min.js"></script>
+  <script src="{{ site.github.url }}/js/vendor/wow.min.js"></script>
+  <script src="{{ site.github.url }}/js/vendor/idangerous.swiper.min.js"></script>
+  <script src="{{ site.github.url }}/js/vendor/all.js"></script>
+  <script src="{{ site.github.url }}/js/contact.js"></script>
+{% else %}
+  <script async src="{{ site.github.url }}/dist/js/all.js"></script>
+{% endif %}

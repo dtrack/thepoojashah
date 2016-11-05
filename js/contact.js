@@ -1,8 +1,3 @@
----
----
-var SUBMIT_URL = "{{ site.data.contact.contact_form_submit_url }}";
-var GH_URL = "{{ site.github.url }}";
-
 (function() { "use strict";
   $(document).ready(function () {
     var $form = $('form[name=contact-form]');
@@ -56,7 +51,7 @@ var GH_URL = "{{ site.github.url }}";
       }
       e.preventDefault();
       $.ajax(
-        SUBMIT_URL, {method: 'POST', data: data}
+        CONTACT_SUBMIT_URL, {method: 'POST', data: data}
       ).success(function (success) {
         successMessage(name);
       }).error(function (error) {
