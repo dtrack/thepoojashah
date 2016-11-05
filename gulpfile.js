@@ -26,31 +26,57 @@ gulp.task('compress', function (cb) {
   );
 });
 
-gulp.task('to-github-pages', function (cb) {
-  // get current branch
+
+gulp.task('git-add-dist', function () {
+  gulp.src('dist').pipe(git.add());
+});
+
+gulp.task('git-commit-dist', function () {
+  git.commit('Adding dist js path');
+});
+
+gulp.task('git-pull-rebase-current-branch', function () {
   git.revParse(
-    {args:'--abbrev-ref HEAD'}, function(err, branch) {
-      runSequence(
-        gulp.src('dist').pipe(git.add()),
-        git.add({args: 'dist'}),
-        git.commit('Adding dist js path'),
-        git.pull('origin', branch, {args: '--rebase'}),
-        git.push('origin', branch),
-        git.checkout('gh-pages'),
-        git.pull('origin', 'gh-pages', {args: '--rebase'}),
-        git.merge(master, {args: '--no-commit --no-ff'}),
-        git.push(origin, 'gh-pages'),
-        git.checkout('master')
-      );
+    {args:'--abbrev-ref HEAD'},
+    function(err, branch) {
+      git.pull('origin', branch, {args: '--rebase'});
     }
   );
+});
+
+gulp.task('git-push-current-branch', function () {
+  git.revParse(
+    {args:'--abbrev-ref HEAD'},
+    function(err, branch) {
+      git.push('origin', branch);
+    }
+  );
+});
+
+gulp.task('git-checkout-gh-pages', function () {
+  git.checkout('gh-pages');
+});
+
+gulp.task('git-merge-master', function () {
+  git.merge('master', {args: '--no-commit --no-ff'});
+});
+
+gulp.task('git-checkout-master', function () {
+  git.checkout('master');
 });
 
 
 gulp.task('release', function (cb) {
   runSequence(
     'compress',
-    'to-github-pages',
+    'git-add-dist',
+    'git-commit-dist',
+    'git-pull-rebase-current-branch',
+    'git-push-current-branch',
+    'git-checkout-gh-pages',
+    'git-merge-master',
+    'git-pull-rebase-current-branch',
+    'git-push-current-branch',
     function (error) {
       if (error) {
         console.log(error.message);
