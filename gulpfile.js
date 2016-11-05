@@ -26,57 +26,31 @@ gulp.task('compress', function (cb) {
   );
 });
 
-
-gulp.task('git-add-dist', function () {
-  gulp.src('dist').pipe(git.add());
-});
-
-gulp.task('git-commit-dist', function () {
-  git.commit('Adding dist js path');
-});
-
-gulp.task('git-pull-rebase-current-branch', function () {
-  git.revParse(
-    {args:'--abbrev-ref HEAD'},
-    function(err, branch) {
-      git.pull('origin', branch, {args: '--rebase'});
-    }
-  );
-});
-
-gulp.task('git-push-current-branch', function () {
-  git.revParse(
-    {args:'--abbrev-ref HEAD'},
-    function(err, branch) {
-      git.push('origin', branch);
-    }
-  );
-});
-
-gulp.task('git-checkout-gh-pages', function () {
-  git.checkout('gh-pages');
-});
-
-gulp.task('git-merge-master', function () {
-  git.merge('master', {args: '--no-commit --no-ff'});
-});
-
-gulp.task('git-checkout-master', function () {
-  git.checkout('master');
+gulp.task('commit-to-gh-pages', function () {
+  git.revParse({args:'--abbrev-ref HEAD'}, function(err, branchName) {
+    // commit dist
+    gulp.src('dist')
+      .pipe(git.add())
+      .pipe(git.commit('Adding dist js path'))
+      // pull rebase and push
+      .pipe(git.pull('origin', branchName, {args: '--rebase'}))
+      .pipe(git.push('origin', branchName))
+      // checkout gh pages and merge branch
+      .pipe(git.checkout('gh-pages'))
+      .pipe(git.merge(branchName, {args: '--no-commit --no-ff'}))
+      // pull rebase and push
+      .pipe(git.pull('origin', 'gh-pages', {args: '--rebase'}))
+      .pipe(git.push('origin', 'gh-pages'))
+      // back to branchName
+      .pipe(git.checkout(branchName));
+  });
 });
 
 
 gulp.task('release', function (cb) {
   runSequence(
     'compress',
-    'git-add-dist',
-    'git-commit-dist',
-    'git-pull-rebase-current-branch',
-    'git-push-current-branch',
-    'git-checkout-gh-pages',
-    'git-merge-master',
-    'git-pull-rebase-current-branch',
-    'git-push-current-branch',
+    'commit-to-gh-pages',
     function (error) {
       if (error) {
         console.log(error.message);
