@@ -30,17 +30,17 @@ gulp.task('to-github-pages', function (cb) {
   // get current branch
   git.revParse(
     {args:'--abbrev-ref HEAD'}, function(err, branch) {
-      pump([
-          git.add('dist'),
-          git.commit('Adding dist js path'),
-          git.pull('origin', branch, {args: '--rebase'}),
-          git.push('origin', branch),
-          git.checkout('gh-pages'),
-          git.pull('origin', 'gh-pages', {args: '--rebase'}),
-          git.merge(master, {args: '--no-commit --no-ff'}),
-          git.push(origin, 'gh-pages'),
-          git.checkout('master')
-        ], cb
+      runSequence(
+        gulp.src('dist').pipe(git.add()),
+        git.add({args: 'dist'}),
+        git.commit('Adding dist js path'),
+        git.pull('origin', branch, {args: '--rebase'}),
+        git.push('origin', branch),
+        git.checkout('gh-pages'),
+        git.pull('origin', 'gh-pages', {args: '--rebase'}),
+        git.merge(master, {args: '--no-commit --no-ff'}),
+        git.push(origin, 'gh-pages'),
+        git.checkout('master')
       );
     }
   );
