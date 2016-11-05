@@ -1,0 +1,23 @@
+{
+  "name": "thepoojashah",
+  "version": "1.0.0",
+  "description": "Website of Pooja Shah",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dtrack/thepoojashah.git"
+  },
+  "author": "Jeremy Henault",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dtrack/thepoojashah/issues"
+  },
+  "homepage": "https://github.com/dtrack/thepoojashah#readme"
+}
