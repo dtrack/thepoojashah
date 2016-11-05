@@ -1,4 +1,5 @@
 var concat = require('gulp-concat');
+var git = require('gulp-git');
 var gulp = require('gulp');
 var pump = require('pump');
 var uglify = require('gulp-uglify');
@@ -25,15 +26,22 @@ gulp.task('compress', function (cb) {
 });
 
 gulp.task('to-github-pages', function (cb) {
-  pump([
-      git.add('dist'),
-      git.commit('Adding dist js path'),
-      git.push('origin'),
-      git.checkout('gh-pages'),
-      git.pull('origin', 'gh-pages', {args: '--rebase'})
-      git.merge(master, {args: '--no-commit --no-ff'})
-      git.push(origin, 'gh-pages')
-    ], cb
+  // get current branch
+  git.revParse(
+    {args:'--abbrev-ref HEAD'}, function(err, branch) {
+      pump([
+          git.add('dist'),
+          git.commit('Adding dist js path'),
+          git.pull('origin', branch, {args: '--rebase'})
+          git.push('origin', branch),
+          git.checkout('gh-pages'),
+          git.pull('origin', 'gh-pages', {args: '--rebase'})
+          git.merge(master, {args: '--no-commit --no-ff'})
+          git.push(origin, 'gh-pages')
+          git.checkout('master')
+        ], cb
+      );
+    }
   );
 });
 
