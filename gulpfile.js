@@ -37,7 +37,7 @@ gulp.task('commit-to-gh-pages', function (cb) {
       git.push('origin', branchName, function () {
         // checkout gh pages and merge branch
         git.checkout('gh-pages', function () {
-          git.merge(branchName, {args: '--no-commit --no-ff'}, function () {
+          git.merge(branchName, function () {
             // pull rebase and push
             git.pull('origin', 'gh-pages', {args: '--rebase'}, function () {
               git.push('origin', 'gh-pages', function () {
