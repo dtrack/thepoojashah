@@ -32,69 +32,103 @@ scaleParamsPerDeviceSize:
     scaleParam2x: c_scale%2Cq_auto:best%2Cw_930
     scaleParam1x: c_scale%2Cq_auto:best%2Cw_465
 
+filters:
+  - name: All
+    filter: :not(.filter-reels)
+    active: true
+  - name: Reels
+    filter: .filter-reels
+  - name: Commercial Clips
+    filter: .filter-commercial-clips
+  - name: TV & Film Clips
+    filter: .filter-theatrical-clips
+
 
 portfolioItems:
-  - imageId: business-like-a-swede.jpg
+  - filters: filter-commercial-clips
+    imageId: business-like-a-swede.jpg
     fullscreenHref: https://www.youtube.com/watch?v=bcoc3AtK2Vc
     title: Business Like A Swede
     subtitle: for TCO
-  - imageId: new-girl.jpg
+  - filters: filter-theatrical-clips
+    imageId: new-girl.jpg
     fullscreenHref: https://www.youtube.com/watch?v=3N4UkfcXReM
     title: Co-Star, Donna
     subtitle: for New Girl
-  - imageId: anastasia.jpg
+  - filters: filter-commercial-clips
+    imageId: anastasia.jpg
     fullscreenHref: https://www.youtube.com/watch?v=VrYWH8G9dRA
     title: Illuminators
     subtitle: for Anastasia Beverly Hills
-  - imageId: 13-ways-to-fall-in-love-pooja-shah.jpg
+  - filters: filter-theatrical-clips
+    imageId: 13-ways-to-fall-in-love-pooja-shah.jpg
     fullscreenHref: https://www.youtube.com/watch?v=lgZ3x0tQ3t8
     title: 13 Ways To Fall In Love - Scenes
     subtitle: Directed by Jared Sosa
-  - imageId: omni-dj.jpg
+  - filters: filter-commercial-clips
+    imageId: omni-dj.jpg
     fullscreenHref: https://www.youtube.com/watch?v=h5Q2EjW2zQs
     title: The Concierge for Your Stuff
     subtitle: for Omni
-  - imageId: honda-finance-short.jpg
+  - filters: filter-commercial-clips
+    imageId: honda-finance-short.jpg
     fullscreenHref: https://www.youtube.com/watch?v=XzQXEvnUS90
     title: Holiday
     subtitle: for Honda Financial Services Grad Program
-  - imageId: commercial-clip.jpg
+  - filters: filter-commercial-clips
+    imageId: commercial-clip.jpg
     fullscreenHref: https://www.youtube.com/watch?v=GODG4OEHz8M
     title: Montage of Commercial Clips
-  - imageId: keller-university.jpg
+  - filters: filter-commercial-clips
+    imageId: keller-university.jpg
     fullscreenHref: https://www.youtube.com/watch?v=-SYFCL4-nu0
     title: Learn Loud
     subtitle: for Keller Graduate School of Management
-  - imageId: honda-finance-long.jpg
+  - filters: filter-commercial-clips
+    imageId: honda-finance-long.jpg
     fullscreenHref: https://www.youtube.com/watch?v=uH0XsBxpol0
     title: It's Your Time
     subtitle: for Honda Financial Services Grad Program
-  - imageId: phorm-pooja-shah.jpg
+  - filters: filter-commercial-clips
+    imageId: phorm-pooja-shah.jpg
     fullscreenHref: https://www.youtube.com/watch?v=ELxfHewjq30
     title: Phorm Keyboard
     subtitle: for Tactus Technology
-  - imageId: safe-auto.jpg
+  - filters: filter-commercial-clips
+    imageId: safe-auto.jpg
     fullscreenHref: https://www.youtube.com/watch?v=biMT_WfHN54
     title: Ladies Night
     subtitle: for Safe Auto
-  - imageId: separation-anxiety-1.jpg
+  - filters: filter-commercial-clips
+    imageId: separation-anxiety-1.jpg
     fullscreenHref: https://www.youtube.com/watch?v=oCt-_8TceBE
     title: Promotional Video
     subtitle: for TBS Separation Anxiety
-  - imageId: buzzfeed.jpg
+  - filters: filter-commercial-clips
+    imageId: buzzfeed.jpg
     fullscreenHref: https://www.youtube.com/watch?v=VPZHKvlWnAc
     title: Anti-Drinking and Driving PSA
     subtitle: for Buzzfeed
-  - imageId: separation-anxiety-2.jpg
+  - filters: filter-commercial-clips
+    imageId: separation-anxiety-2.jpg
     fullscreenHref: https://www.youtube.com/watch?v=Im5XYbuG3B0
     title: Promotional Video 2
     subtitle: for TBS Separation Anxiety
+  - filters: filter-reels
+    imageId: pooja-shah-demo-reel.jpg
+    fullscreenHref: https://www.youtube.com/watch?v=8QnXtntST60
+    title: Demo Reel
+  - filters: filter-reels
+    imageId: pooja-shah-commercial-reel.jpg
+    fullscreenHref: https://www.youtube.com/watch?v=HJUL4YvMJI0
+    title: Commercial Reel
+
 ---
 
 <div class="top-baner half-height bg-green">
   <div class="main-title no-bg">
     <h2>Video Clips</h2>
-    <p>Collection of commercial and theatrical videos</p>
+    <p>Collection of Commercial and TV & Film Videos</p>
   </div>
 </div>
 
