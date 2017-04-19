@@ -30,22 +30,6 @@ active: Contact
         </div>
       </div>
       <div class="col-md-4">
-        <h5>Social Media</h5>
-        <p>
-          <a href="https://www.facebook.com/{{ site.data.social.facebook }}/" target="_blank">
-            <i class="fa fa-facebook"> </i>
-            /{{ site.data.social.facebook }}
-          </a><br>
-          <a href="https://www.instagram.com/{{ site.data.social.instagram }}/" target="_blank">
-            <i class="fa fa-instagram"></i>
-            @{{ site.data.social.instagram }}
-          </a><br>
-          <a href="https://twitter.com//{{ site.data.social.twitter }}" target="_blank">
-            <i class="fa fa-twitter"></i>
-            @{{ site.data.social.twitter }}
-          </a><br>
-        </p>
-        </p>
         {% for member in site.data.contact.team %}
           <h5>{{ member.title }}</h5>
           <p>
