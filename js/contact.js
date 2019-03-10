@@ -51,7 +51,7 @@
       }
       e.preventDefault();
       $.ajax(
-        CONTACT_SUBMIT_URL, {method: 'POST', data: data}
+        CONTACT_SUBMIT_URL, {method: 'POST', data: data, dataType: 'jsonp'}
       ).success(function (success) {
         successMessage(name);
       }).error(function (error) {
