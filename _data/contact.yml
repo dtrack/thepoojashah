@@ -14,5 +14,10 @@ team:
     name: Carol Scott
     phone: 310.475.7573
     email: cscott@cesdtalent.com
+  - title: Manager
+    agency: Industry Entertainment
+    name: Jared Schwartz
+    phone: 323.964.9286
+    email: jareds@industryentertainment.com
 
 contact_form_submit_url: https://script.google.com/macros/s/AKfycbwT7I6el7f3eixaP8rKRSJ2UVcH6E-aQdcbYYRu6Hcxhj_mh4M_/exec
