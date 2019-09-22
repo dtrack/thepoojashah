@@ -19,12 +19,17 @@ active: Contact
         <div class="about-item">
           <h5>Questions and Inquiries</h5>
           <div class="contact-form">
-            <form name="contact-form" onsubmit="return false">
+            <form
+                name="contact-form"
+                class="gform"
+                onsubmit="return false"
+                action="{{ site.data.contact.contact_form_submit_url}} ">
               <input type="text" placeholder="Name*" name="name" required>
               <input type="email" placeholder="Email*" name="email" required>
               <input type="text" placeholder="Subject" name="subject">
               <textarea placeholder="Message"  name="message" required></textarea>
               <input type="submit" value="Send Message" name="submit">
+              <input id="honeypot" type="text" name="honeypot" value="" />
             </form>
           </div>
         </div>

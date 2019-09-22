@@ -37,28 +37,95 @@
     }
 
     // Submit handler
-    $form.children('input[type=submit]').click(function (e) {
-      var name = $form.children('[name=name]').val();
-      var email = $form.children('[name=email]').val();
-      var subject = $form.children('[name=subject]').val();
-      var message = $form.children('[name=message]').val();
-      var data = {
-        name: name, email: email, subject: subject, message: message
-      };
+    $form.submit(function (e) {
+      handleFormSubmit(e);
+    });
 
-      if (!$form[0].checkValidity()) {
-        return;
+    function handleFormSubmit(event) {  // handles form submit without any jquery
+      event.preventDefault();           // we are submitting via xhr below
+      var form = event.target;
+      var formData = getFormData(form);
+      var data = formData.data;
+      var name = $form.children('[name=name]').val();
+
+      // If a honeypot field is filled, assume it was done so by a spam bot.
+      if (formData.honeypot) {
+        return false;
       }
-      e.preventDefault();
-      $.ajax(
-        CONTACT_SUBMIT_URL, {method: 'POST', data: data, dataType: 'jsonp'}
-      ).success(function (success) {
-        successMessage(name);
-      }).error(function (error) {
-        errorMessage(name);
+
+      $form.attr('disabled', true);
+      var url = form.action;
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', url);
+      // xhr.withCredentials = true;
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            successMessage(name);
+          }
+          else {
+            errorMessage(name);
+          }
+      };
+      // url encode form data for sending as post data
+      var encoded = Object.keys(data).map(function(k) {
+          return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+      }).join('&');
+      xhr.send(encoded);
+    }
+
+
+    function getFormData(form) {
+      var elements = form.elements;
+      var honeypot;
+
+      var fields = Object.keys(elements).filter(function(k) {
+        if (elements[k].name === "honeypot") {
+          honeypot = elements[k].value;
+          return false;
+        }
+        return true;
+      }).map(function(k) {
+        if(elements[k].name !== undefined) {
+          return elements[k].name;
+        // special case for Edge's html collection
+        }else if(elements[k].length > 0){
+          return elements[k].item(0).name;
+        }
+      }).filter(function(item, pos, self) {
+        return self.indexOf(item) == pos && item;
       });
 
-    });
+      var formData = {};
+      fields.forEach(function(name){
+        var element = elements[name];
+
+        // singular form elements just have one value
+        formData[name] = element.value;
+
+        // when our element has multiple items, get their values
+        if (element.length) {
+          var data = [];
+          for (var i = 0; i < element.length; i++) {
+            var item = element.item(i);
+            if (item.checked || item.selected) {
+              data.push(item.value);
+            }
+          }
+          formData[name] = data.join(', ');
+        }
+      });
+
+      // add form-specific values into the data
+      formData.formDataNameOrder = JSON.stringify(fields);
+      formData.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
+      formData.formGoogleSend
+        = form.dataset.email || ""; // no email by default
+
+      return {data: formData, honeypot: honeypot};
+    }
+
+
   });
 
 

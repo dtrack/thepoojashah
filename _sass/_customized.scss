@@ -36,6 +36,9 @@
 
     // Contact form
     .contact {
+      #honeypot {
+        display: none;
+      }
       .about-item {
         a {
           font-weight: bold;
