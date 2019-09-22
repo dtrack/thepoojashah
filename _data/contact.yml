@@ -20,4 +20,4 @@ team:
     phone: 310.475.7573
     email: cscott@cesdtalent.com
 
-contact_form_submit_url: https://script.google.com/macros/s/AKfycbwT7I6el7f3eixaP8rKRSJ2UVcH6E-aQdcbYYRu6Hcxhj_mh4M_/exec
+contact_form_submit_url: https://script.google.com/macros/s/AKfycbwT7I6el7f3eixaP8rKRSJ2UVcH6E-aQdcbYYRu6Hcxhj_mh4M_/exec?callback=?
