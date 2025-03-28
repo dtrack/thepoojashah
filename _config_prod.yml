@@ -12,7 +12,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Pooja Shah, theatrical and commercial actress official page.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://thepoojashah.com" # the base hostname & protocol for your site
-twitter_username: ThePoojaShah
+twitter_username: ThisIsPoojaShah
 github_username:  dtrack
 
 # Build settings
